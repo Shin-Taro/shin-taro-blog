@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings 0 --cache",
+    "fix": "prettier \"./src/**/*.{ts,tsx}\" --write --ignore-path .gitignore"
   },
   "dependencies": {
     "@types/node": "18.16.3",
