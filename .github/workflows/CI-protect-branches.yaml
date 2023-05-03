@@ -1,0 +1,26 @@
+name: CI-protect-branches
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  code-checking:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ./.node-version
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: run lint
+        run: yarn lint
