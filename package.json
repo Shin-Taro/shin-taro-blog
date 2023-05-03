@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings 0 --cache",
-    "fix": "prettier \"./src/**/*.{ts,tsx}\" --write --ignore-path .gitignore"
+    "fix": "run-s fix-by-prettier fix-by-eslint",
+    "fix-by-prettier": "prettier \"./src/**/*.{ts,tsx}\" --write --ignore-path .gitignore",
+    "fix-by-eslint": "eslint \"./src/**/*.{ts,tsx}\" --fix --max-warnings 0 --cache"
   },
   "dependencies": {
     "@types/node": "18.16.3",
