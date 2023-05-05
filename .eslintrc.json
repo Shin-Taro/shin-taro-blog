@@ -26,7 +26,14 @@
     "@typescript-eslint/no-unsafe-member-access": "error",
     "@typescript-eslint/no-unsafe-return": "error",
     // .tsxを許可する設定
-    "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }]
+    "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
   },
   "ignorePatterns": ["**/.next/**"]
 }
