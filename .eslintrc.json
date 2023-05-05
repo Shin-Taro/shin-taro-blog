@@ -45,7 +45,16 @@
     ],
     "camelcase": "off",
     // static exportするためimgタグを使用する
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "unicorn/prevent-abbreviations": [
+      "warn",
+      {
+        "allowList": {
+          "props": true,
+          "Props": true
+        }
+      }
+    ]
   },
   "ignorePatterns": ["**/.next/**"]
 }
