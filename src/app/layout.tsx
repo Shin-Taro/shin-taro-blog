@@ -6,6 +6,7 @@ import { MainContainer } from "@/components/layouts/MainContainer"
 import { SideBar } from "@/components/layouts/SideBar"
 import { Header } from "@/components/layouts/Header"
 import { Profile } from "@/components/elements/Profile"
+import { Main } from "@/components/layouts/Main"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
@@ -16,13 +17,14 @@ export const metadata = {
 }
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
-  <html lang="en">
+  <html lang="ja">
     <body className={inter.className}>
       <OutSideContainer>
-        <SideBar>広告領域</SideBar>
+        {/* TODO: 広告なり付ける */}
+        <SideBar />
         <MainContainer>
           <Header />
-          <main>{children}</main>
+          <Main>{children}</Main>
         </MainContainer>
         <SideBar>
           <div className="mt-[100px] flex justify-center">
