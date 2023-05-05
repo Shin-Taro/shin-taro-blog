@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import "./globals.css"
+import "@/styles/globals.css"
 import { Noto_Sans_JP } from "next/font/google"
 import { OutSideContainer } from "@/components/layouts/OutSideContainer"
 import { MainContainer } from "@/components/layouts/MainContainer"
