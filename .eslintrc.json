@@ -34,6 +34,15 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "react/jsx-props-no-spreading": [
+      1,
+      {
+        "html": "enforce",
+        "custom": "ignore",
+        "explicitSpread": "ignore"
+      }
+    ],
+    "react/destructuring-assignment": "off",
     "import/prefer-default-export": "off",
     "import/extensions": [
       2,
