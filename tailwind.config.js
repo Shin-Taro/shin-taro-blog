@@ -24,7 +24,7 @@ module.exports = {
       sixth: "1.2rem",
     },
     boxShadow: {
-      dropMain: "1px 3px 3px rgba(255, 255, 255, 0.15)",
+      dropMain: "2px 5px 10px rgba(255, 255, 255, 0.15)",
     },
     extend: {},
   },
