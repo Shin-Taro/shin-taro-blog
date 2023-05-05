@@ -34,7 +34,9 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/extensions": [".js", ".ts", "tsx"],
+    "camelcase": "off"
   },
   "ignorePatterns": ["**/.next/**"]
 }
