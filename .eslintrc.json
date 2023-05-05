@@ -35,7 +35,14 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "import/extensions": [".js", ".ts", "tsx"],
+    "import/extensions": [
+      2,
+      {
+        ".js": "always",
+        ".ts": "always",
+        ".tax": "always"
+      }
+    ],
     "camelcase": "off"
   },
   "ignorePatterns": ["**/.next/**"]
