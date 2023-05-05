@@ -5,6 +5,7 @@ import { OutSideContainer } from "@/components/layouts/OutSideContainer"
 import { MainContainer } from "@/components/layouts/MainContainer"
 import { SideBar } from "@/components/layouts/SideBar"
 import { Header } from "@/components/layouts/Header"
+import { Profile } from "@/components/Profile"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
@@ -23,7 +24,11 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
           <Header />
           <main>{children}</main>
         </MainContainer>
-        <SideBar>広告・プロフィールカード</SideBar>
+        <SideBar>
+          <div className="mt-[100px] flex justify-center">
+            <Profile />
+          </div>
+        </SideBar>
       </OutSideContainer>
     </body>
   </html>
