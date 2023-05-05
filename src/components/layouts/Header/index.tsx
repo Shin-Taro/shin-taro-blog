@@ -14,7 +14,7 @@ export const Header: FC = () => (
         </li>
         <li className="mx-[20px] flex items-center">
           {/* TODO: twitterアカウント作る */}
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Shin-Taro" target="_blank" rel="noopener noreferrer">
             <TwitterIcon />
           </a>
         </li>
