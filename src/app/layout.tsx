@@ -5,7 +5,7 @@ import { OutSideContainer } from "@/components/layouts/OutSideContainer"
 import { MainContainer } from "@/components/layouts/MainContainer"
 import { SideBar } from "@/components/layouts/SideBar"
 import { Header } from "@/components/layouts/Header"
-import { Profile } from "@/components/Profile"
+import { Profile } from "@/components/elements/Profile"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
