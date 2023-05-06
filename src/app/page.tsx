@@ -10,7 +10,7 @@ const dummy = {
       createDate: formatDate("2022-01-01T00:00:00.000Z"),
       title: "Dummy article title",
       body: "<p>Plain text is available using the fmt operator.</p>",
-      tags: ["React", "Next.js"],
+      tags: ["React", "Next"],
       excerpt:
         "Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.",
     },
@@ -19,7 +19,7 @@ const dummy = {
       createDate: formatDate("2022-01-01T00:00:00.000Z"),
       title: "Dummy article title",
       body: "<p>Plain text is available using the fmt operator.</p>",
-      tags: ["React", "Next.js"],
+      tags: ["React", "Next"],
       excerpt:
         "Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.",
     },
