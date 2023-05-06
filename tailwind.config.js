@@ -29,4 +29,6 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  // syntax highlight関連で必要
+  important: true,
 }
