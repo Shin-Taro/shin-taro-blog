@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import { Home } from "@/components/templates/Home"
+import { HomeTemplate } from "@/components/templates/Home"
 import { formatDate } from "@/modules/formatDate"
 
 // FIXME: 後で消す
@@ -26,6 +26,6 @@ const dummy = {
   ],
 }
 
-const HomePage: NextPage = () => <Home articleListProps={dummy} />
+const HomePage: NextPage = () => <HomeTemplate articleListProps={dummy} />
 
 export default HomePage

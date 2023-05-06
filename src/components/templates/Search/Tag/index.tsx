@@ -7,7 +7,7 @@ type Props = {
   total: number
 }
 
-export const SearchTag: FC<Props> = (props) => (
+export const SearchTagTemplate: FC<Props> = (props) => (
   <section>
     <h1 className="text-center text-first sp:text-second">「{props.tag}」に関する記事一覧</h1>
     <p className="mt-[15px] text-center text-third">{props.total}件の記事</p>

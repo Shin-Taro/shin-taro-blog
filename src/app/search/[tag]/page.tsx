@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import { formatDate } from "@/modules/formatDate"
-import { SearchTag } from "@/components/templates/Search/Tag"
+import { SearchTagTemplate } from "@/components/templates/Search/Tag"
 
 // FIXME: 後で消す
 const dummy = {
@@ -30,6 +30,6 @@ const dummy = {
   },
 }
 
-const SearchTagPage: NextPage = () => <SearchTag {...dummy} />
+const SearchTagPage: NextPage = () => <SearchTagTemplate {...dummy} />
 
 export default SearchTagPage
