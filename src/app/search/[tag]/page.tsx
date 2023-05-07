@@ -3,7 +3,7 @@ import { newtApiClient } from "@/libs/newt/newtApiClient"
 import { AppUid } from "@/const/AppUid"
 import { ModelUid } from "@/const/ModelUid"
 import { ArticleResponse } from "@/libs/newt/types"
-import { convertToArticleList } from "@/modules/convertToArticleList"
+import { convertArticle } from "@/modules/convertToArticleList"
 
 type Props = {
   params: {
@@ -19,7 +19,7 @@ const SearchTagPage = async (props: Props) => {
     tags: [tag],
   }
   const { items, total } = await newtApiClient.getContents<ArticleResponse>({ appUid: AppUid, modelUid: ModelUid.ARTICLE, query })
-  const convertedList = convertToArticleList(items)
+  const convertedList = items.map(convertArticle)
   const dependencies = {
     tag,
     total,
