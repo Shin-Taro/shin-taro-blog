@@ -56,7 +56,8 @@
           "Props": true
         }
       }
-    ]
+    ],
+    "unicorn/no-array-callback-reference": "off"
   },
   "ignorePatterns": ["**/.next/**"]
 }
