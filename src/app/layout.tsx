@@ -16,6 +16,9 @@ export const metadata = {
     template:"%s | shin-taro/blog"
   },
   description: "shin-taroの技術ブログです。Webフロントエンド関連が多めです。",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
