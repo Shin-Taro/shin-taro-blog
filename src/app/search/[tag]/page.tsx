@@ -1,35 +1,34 @@
-import { NextPage } from "next"
-import { formatDate } from "@/modules/formatDate"
 import { SearchTagTemplate } from "@/components/templates/Search/Tag"
+import { newtApiClient } from "@/libs/newt/newtApiClient"
+import { AppUid } from "@/const/AppUid"
+import { ModelUid } from "@/const/ModelUid"
+import { ArticleResponse } from "@/libs/newt/types"
+import { convertToArticleList } from "@/modules/convertToArticleList"
 
-// FIXME: 後で消す
-const dummy = {
-  tag: "React",
-  total: 2,
-  articleListProps: {
-    articles: [
-      {
-        id: "dummy1",
-        createDate: formatDate("2022-01-01T00:00:00.000Z"),
-        title: "Dummy article title",
-        body: "<p>Plain text is available using the fmt operator.</p>",
-        tags: ["React", "Next"],
-        excerpt:
-          "Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.",
-      },
-      {
-        id: "dummy2",
-        createDate: formatDate("2022-01-01T00:00:00.000Z"),
-        title: "Dummy article title",
-        body: "<p>Plain text is available using the fmt operator.</p>",
-        tags: ["React", "Next"],
-        excerpt:
-          "Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.",
-      },
-    ],
-  },
+type Props = {
+  params: {
+    tag: string
+  }
 }
 
-const SearchTagPage: NextPage = () => <SearchTagTemplate {...dummy} />
+const SearchTagPage = async (props: Props) => {
+  const {
+    params: { tag },
+  } = props
+  const query = {
+    tags: [tag],
+  }
+  const { items, total } = await newtApiClient.getContents<ArticleResponse>({ appUid: AppUid, modelUid: ModelUid.ARTICLE, query })
+  const convertedList = convertToArticleList(items)
+  const dependencies = {
+    tag,
+    total,
+    articleListProps: {
+      articles: convertedList,
+    },
+  }
+
+  return <SearchTagTemplate {...dependencies} />
+}
 
 export default SearchTagPage
