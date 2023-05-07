@@ -4,13 +4,14 @@ import { Article } from "@/models/Article"
 import Link from "next/link"
 import { FC } from "react"
 
-// TODO: リンク追加
 export const ArticleItem: FC<Article> = (props) => {
   const { title, excerpt, createDate, tags, id } = props
   return (
     <article>
       <h2 className="text-second sp:text-third">
-        <Link href={`/articles/${id}`}>{title}</Link>
+        <Link className="underline underline-offset-4 hover:text-main" href={`/articles/${id}`}>
+          {title}
+        </Link>
       </h2>
       <div className="mt-[15px] flex">
         <p className="text-fifth">{createDate}</p>
