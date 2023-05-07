@@ -1,31 +1,20 @@
-import { NextPage } from "next"
 import { HomeTemplate } from "@/components/templates/Home"
-import { formatDate } from "@/modules/formatDate"
+import { newtApiClient } from "@/libs/newt/newtApiClient"
+import { ModelUid } from "@/const/ModelUid"
+import { AppUid } from "@/const/AppUid"
+import { ArticleResponse } from "@/libs/newt/types"
+import { convertToArticleList } from "@/modules/convertToArticleList"
 
-// FIXME: 後で消す
-const dummy = {
-  articles: [
-    {
-      id: "dummy1",
-      createDate: formatDate("2022-01-01T00:00:00.000Z"),
-      title: "Dummy article title",
-      body: "<p>Plain text is available using the fmt operator.</p>",
-      tags: ["React", "Next"],
-      excerpt:
-        "Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.",
+const HomePage = async () => {
+  const response = await newtApiClient.getContents<ArticleResponse>({ appUid: AppUid, modelUid: ModelUid.ARTICLE })
+  const convertedList = convertToArticleList(response.items)
+  const dependencies = {
+    articleListProps: {
+      articles: convertedList,
     },
-    {
-      id: "dummy2",
-      createDate: formatDate("2022-01-01T00:00:00.000Z"),
-      title: "Dummy article title",
-      body: "<p>Plain text is available using the fmt operator.</p>",
-      tags: ["React", "Next"],
-      excerpt:
-        "Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.Dummy article excerpt.",
-    },
-  ],
+  }
+
+  return <HomeTemplate {...dependencies} />
 }
-
-const HomePage: NextPage = () => <HomeTemplate articleListProps={dummy} />
 
 export default HomePage
