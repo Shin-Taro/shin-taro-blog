@@ -1,5 +1,5 @@
-import { GithubIcon } from "@/icons/Github"
-import { TwitterIcon } from "@/icons/Twitter"
+import { GithubIcon } from "@/components/icons/Github"
+import { TwitterIcon } from "@/components/icons/Twitter"
 import Link from "next/link"
 import { FC } from "react"
 

@@ -1,6 +1,6 @@
 import { ArticleBody } from "@/components/elements/ArticleBody"
 import { Tag } from "@/components/elements/Tag"
-import { TagIcon } from "@/icons/Tag"
+import { TagIcon } from "@/components/icons/Tag"
 import { Article } from "@/models/Article"
 import Link from "next/link"
 import { FC } from "react"
