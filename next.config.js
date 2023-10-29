@@ -4,6 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   output: "export",
+  dynamicParams: false
 }
 
 module.exports = nextConfig
