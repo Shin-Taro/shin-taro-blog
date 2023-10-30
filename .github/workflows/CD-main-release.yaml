@@ -35,6 +35,9 @@ jobs:
           APP_UID: ${{ secrets.APP_UID }}
         run: yarn build
 
+      - name: Add CNAME
+        run: cp ./CNAME ./out/
+
       - name: Upload to artifact
         uses: actions/upload-pages-artifact@v2
         with:
