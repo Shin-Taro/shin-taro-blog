@@ -16,7 +16,7 @@ export const generateStaticParams = async () => {
   const { items } = await newtApiClient.getContents<ArticleResponse>({ appUid: AppUid, modelUid: ModelUid.ARTICLE })
   const flattenTags = items.flatMap(({ tags }) => tags)
   const uniqueTags = [...new Set(flattenTags)]
-  return uniqueTags.map((tag) => ({ params: { tag } }))
+  return uniqueTags.map((tag) => ({ tag }))
 }
 
 const SearchTagPage = async (props: Props) => {

@@ -14,7 +14,7 @@ type Props = {
 /* eslint-disable-next-line unicorn/prevent-abbreviations */
 export const generateStaticParams = async () => {
   const { items } = await newtApiClient.getContents<ArticleResponse>({ appUid: AppUid, modelUid: ModelUid.ARTICLE })
-  return items.map(({ _id }) => ({ params: { id: _id } }))
+  return items.map(({ _id }) => ({ id: _id }))
 }
 
 const ArticlePage = async (props: Props) => {
