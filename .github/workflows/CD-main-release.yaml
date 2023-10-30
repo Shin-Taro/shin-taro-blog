@@ -45,7 +45,6 @@ jobs:
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main'
     timeout-minutes: 15
     runs-on: ubuntu-latest
     concurrency:
