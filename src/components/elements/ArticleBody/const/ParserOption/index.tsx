@@ -10,10 +10,12 @@ import { CustomCode, CustomPre } from "../../components/CodeBlock"
 const NoReturnValue = undefined
 
 export const ParserOption: HTMLReactParserOptions = {
+  // このファイルで全てのHTMLタグを定義する
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   replace: (domNode) => {
     if (!(domNode instanceof Element)) return NoReturnValue
 
-    const { tagName, children, attribs } = domNode
+    const { tagName, children, attribs, parentNode } = domNode
     const props = attributesToProps(attribs)
 
     if (tagName === "h2")
@@ -33,6 +35,34 @@ export const ParserOption: HTMLReactParserOptions = {
         <p className="mt-[15px] text-fourth" {...props}>
           {domToReact(children, ParserOption)}
         </p>
+      )
+
+    if (tagName === "ul") {
+      const isChildList = parentNode instanceof Element && parentNode?.tagName === "li"
+      const listClass = isChildList ? "ml-[20px] list-circle" : "mt-[10px] list-disc"
+      return (
+        <ul className={`list-inside text-fourth ${listClass}`} {...props}>
+          {domToReact(children, ParserOption)}
+        </ul>
+      )
+    }
+
+    if (tagName === "ol") {
+      const isChildList = parentNode instanceof Element && parentNode?.tagName === "li"
+      const listClass = isChildList ? "ml-[20px] list-roman" : "mt-[10px] list-decimal"
+
+      return (
+        <ol className={`list-inside text-fourth ${listClass}`} {...props}>
+          {domToReact(children, ParserOption)}
+        </ol>
+      )
+    }
+
+    if (tagName === "li")
+      return (
+        <li className="mt-[5px] text-fourth" {...props}>
+          {domToReact(children, ParserOption)}
+        </li>
       )
 
     // code syntax highlightの設定
