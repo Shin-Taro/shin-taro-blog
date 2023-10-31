@@ -32,7 +32,7 @@ export const ParserOption: HTMLReactParserOptions = {
       )
     if (tagName === "p")
       return (
-        <p className="mt-[15px] text-fourth" {...props}>
+        <p className="mt-[20px] text-fourth" {...props}>
           {domToReact(children, ParserOption)}
         </p>
       )
