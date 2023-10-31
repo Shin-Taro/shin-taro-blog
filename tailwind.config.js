@@ -23,6 +23,13 @@ module.exports = {
       fifth: "1.4rem",
       sixth: "1.2rem",
     },
+    listStyleType: {
+      none: "none",
+      disc: "disc",
+      decimal: "decimal",
+      circle: "circle",
+      roman: "lower-roman",
+    },
     boxShadow: {
       dropMain: "2px 5px 10px rgba(255, 255, 255, 0.15)",
     },
