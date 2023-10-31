@@ -65,6 +65,13 @@ export const ParserOption: HTMLReactParserOptions = {
         </li>
       )
 
+    if (tagName === "blockquote")
+      return (
+        <blockquote className="mt-[20px] border-l-4 border-subFont py-2 pl-8 text-fourth text-subFont" {...props}>
+          {domToReact(children)}
+        </blockquote>
+      )
+
     // code syntax highlightの設定
     if (tagName === "pre") return <>{domToReact(children, ParserOption)}</>
 
