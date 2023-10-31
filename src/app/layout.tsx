@@ -7,6 +7,7 @@ import { SideBar } from "@/components/layouts/SideBar"
 import { Header } from "@/components/layouts/Header"
 import { Profile } from "@/components/elements/Profile"
 import { Main } from "@/components/layouts/Main"
+import { GATracking } from "@/components/features/GATracker"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
@@ -23,6 +24,9 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html lang="ja">
+    <head>
+      <GATracking />
+    </head>
     <body className={inter.className}>
       <OutSideContainer>
         <SideBar />
