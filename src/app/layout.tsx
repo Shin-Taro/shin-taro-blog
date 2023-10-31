@@ -13,7 +13,7 @@ const inter = Noto_Sans_JP({ subsets: ["latin"] })
 export const metadata = {
   title: {
     default: "shin-taro/blog",
-    template:"%s | shin-taro/blog"
+    template: "%s | shin-taro/blog",
   },
   description: "shin-taroの技術ブログです。Webフロントエンド関連が多めです。",
   icons: {
@@ -31,7 +31,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
           <Main>{children}</Main>
         </MainContainer>
         <SideBar>
-          <div className="mt-[100px] flex justify-center">
+          <div className="mt-[130px] flex justify-center">
             <Profile />
           </div>
         </SideBar>

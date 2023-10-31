@@ -32,7 +32,7 @@ export const ParserOption: HTMLReactParserOptions = {
       )
     if (tagName === "p")
       return (
-        <p className="mt-[20px] text-fourth" {...props}>
+        <p className="mt-[20px] text-fourth leading-loose tracking-wide sp:leading-relaxed" {...props}>
           {domToReact(children, ParserOption)}
         </p>
       )
