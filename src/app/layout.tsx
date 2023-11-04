@@ -8,6 +8,7 @@ import { Header } from "@/components/layouts/Header"
 import { Profile } from "@/components/elements/Profile"
 import { Main } from "@/components/layouts/Main"
 import { GATracking } from "@/components/features/GATracker"
+import { Footer } from "@/components/layouts/Footer"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
@@ -40,6 +41,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
           </div>
         </SideBar>
       </OutSideContainer>
+      <Footer />
     </body>
   </html>
 )
