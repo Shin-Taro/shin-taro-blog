@@ -33,6 +33,7 @@ module.exports = {
     },
     boxShadow: {
       dropMain: "2px 5px 10px rgba(255, 255, 255, 0.15)",
+      dropUp: "0px -5px 10px rgba(255, 255, 255, 0.15)",
     },
     extend: {},
   },
