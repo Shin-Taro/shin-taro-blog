@@ -12,14 +12,37 @@ import { Footer } from "@/components/layouts/Footer"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
+const siteName = "shin-taro/blog"
+const description = "shin-taroの技術ブログです。Webフロントエンド関連が多めです。"
+const url = "https://blog.shi-taro.info"
+
 export const metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === "production" ? url : "http://localhost:3000"),
   title: {
-    default: "shin-taro/blog",
-    template: "%s | shin-taro/blog",
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
-  description: "shin-taroの技術ブログです。Webフロントエンド関連が多めです。",
-  icons: {
-    icon: "/favicon.ico",
+  description,
+  openGraph: {
+    title: {
+      default: siteName,
+      template: `%s | ${siteName}`,
+    },
+    description,
+    url,
+    siteName,
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: siteName,
+      template: `%s | ${siteName}`,
+    },
+    description,
+    site: "@shin_taro_dev",
+    creator: "@shin_taro_dev",
   },
 }
 

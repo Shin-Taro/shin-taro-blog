@@ -12,9 +12,20 @@ export const generateMetadata = (props: Props): Metadata => {
     params: { tag },
   } = props
 
+  const title = `「${tag}」に関する記事の一覧`
+  const description = `${tag}に関連のあるshin-taroの技術記事の一覧ページです。`
+
   return {
-    title: `「${tag}」に関する記事の一覧`,
-    description: `${tag}に関連のあるshin-taroの技術記事の一覧ページです。`
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+    twitter: {
+      title,
+      description,
+    },
   }
 }
 
