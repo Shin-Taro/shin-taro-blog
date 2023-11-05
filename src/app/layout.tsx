@@ -14,7 +14,7 @@ const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
 const siteName = "shin-taro/blog"
 const description = "shin-taroの技術ブログです。Webフロントエンド関連が多めです。"
-const url = "https://blog.shi-taro.info"
+const url = "https://blog.shin-taro.info"
 
 export const metadata = {
   metadataBase: new URL(process.env.NODE_ENV === "production" ? url : "http://localhost:3000"),
