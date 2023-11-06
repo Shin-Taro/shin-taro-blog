@@ -26,6 +26,14 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
       ...MetaDataBase.openGraph,
       title,
       description: excerpt,
+      images: [
+        {
+          url: "/opengraph-image.jpg",
+          width: 300,
+          height: 300,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       ...MetaDataBase.twitter,

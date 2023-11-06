@@ -23,6 +23,14 @@ export const generateMetadata = (props: Props): Metadata => {
       ...MetaDataBase.openGraph,
       title,
       description,
+      images: [
+        {
+          url: "/opengraph-image.jpg",
+          width: 300,
+          height: 300,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       ...MetaDataBase.twitter,
