@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode, Suspense } from "react"
 import "@/styles/globals.css"
 import { Noto_Sans_JP } from "next/font/google"
 import { OutSideContainer } from "@/components/layouts/OutSideContainer"
@@ -49,7 +49,10 @@ export const metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html lang="ja">
     <head>
-      <GATracking />
+      {/* eslint-disable-next-line unicorn/no-null */}
+      <Suspense fallback={null}>
+        <GATracking />
+      </Suspense>
     </head>
     <body className={inter.className}>
       <OutSideContainer>
