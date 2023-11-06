@@ -1,3 +1,4 @@
+import { MetaDataBase } from "@/const/MetadataBase"
 import { Metadata } from "next"
 import { ReactNode } from "react"
 
@@ -19,10 +20,20 @@ export const generateMetadata = (props: Props): Metadata => {
     title,
     description,
     openGraph: {
+      ...MetaDataBase.openGraph,
       title,
       description,
+      images: [
+        {
+          url: "/opengraph-image.jpg",
+          width: 300,
+          height: 300,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
+      ...MetaDataBase.twitter,
       title,
       description,
     },
