@@ -9,40 +9,23 @@ import { Profile } from "@/components/elements/Profile"
 import { Main } from "@/components/layouts/Main"
 import { GATracking } from "@/components/features/GATracker"
 import { Footer } from "@/components/layouts/Footer"
+import { Metadata } from "next"
+import { MetaDataBase } from "@/const/MetadataBase"
 
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
-const siteName = "shin-taro/blog"
 const description = "shin-taroの技術ブログです。Webフロントエンド関連が多めです。"
-const url = "https://blog.shin-taro.info"
 
-export const metadata = {
-  metadataBase: new URL(process.env.NODE_ENV === "production" ? url : "http://localhost:3000"),
-  title: {
-    default: siteName,
-    template: `%s | ${siteName}`,
-  },
+export const metadata: Metadata = {
+  ...MetaDataBase,
   description,
   openGraph: {
-    title: {
-      default: siteName,
-      template: `%s | ${siteName}`,
-    },
+    ...MetaDataBase.openGraph,
     description,
-    url,
-    siteName,
-    locale: "ja_JP",
-    type: "website",
   },
   twitter: {
-    card: "summary",
-    title: {
-      default: siteName,
-      template: `%s | ${siteName}`,
-    },
+    ...MetaDataBase.twitter,
     description,
-    site: "@shin_taro_dev",
-    creator: "@shin_taro_dev",
   },
 }
 
