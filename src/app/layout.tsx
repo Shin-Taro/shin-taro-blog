@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     ...MetaDataBase.twitter,
     description,
   },
+  verification: {
+    google: "ilu1Eo8BqG8_aefajZz3KBFEot4I1WIu7HCEPMLOQ9k",
+  },
 }
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
