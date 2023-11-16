@@ -39,6 +39,9 @@ jobs:
       - name: Add CNAME
         run: cp ./CNAME ./out/
 
+      - name: Add _config.yml
+        run: cp ./_config.yml ./out/
+
       - name: Upload to artifact
         uses: actions/upload-pages-artifact@v2
         with:
