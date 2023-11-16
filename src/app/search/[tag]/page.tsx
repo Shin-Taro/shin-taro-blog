@@ -4,6 +4,7 @@ import { AppUid } from "@/const/AppUid"
 import { ModelUid } from "@/const/ModelUid"
 import { ArticleResponse } from "@/libs/newt/types"
 import { convertArticle } from "@/modules/convertToArticleList"
+import { fetchTagList } from "@/modules/fetchTagList"
 
 type Props = {
   params: {
@@ -13,10 +14,8 @@ type Props = {
 
 /* eslint-disable-next-line unicorn/prevent-abbreviations */
 export const generateStaticParams = async () => {
-  const { items } = await newtApiClient.getContents<ArticleResponse>({ appUid: AppUid, modelUid: ModelUid.ARTICLE })
-  const flattenTags = items.flatMap(({ tags }) => tags)
-  const uniqueTags = [...new Set(flattenTags)]
-  return uniqueTags.map((tag) => ({ tag }))
+  const tags = await fetchTagList()
+  return tags.map((tag) => ({ tag }))
 }
 
 const SearchTagPage = async (props: Props) => {
