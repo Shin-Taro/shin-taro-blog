@@ -1,11 +1,8 @@
 {
   "name": "shin-taro-blog",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "18.16.0",
-    "yarn": "1.22.19"
-  },
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

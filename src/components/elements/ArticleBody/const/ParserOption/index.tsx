@@ -37,6 +37,13 @@ export const ParserOption: HTMLReactParserOptions = {
         </p>
       )
 
+    if (tagName === "a")
+      return (
+        <a className="underline hover:text-subFont" {...props}>
+          {domToReact(children, ParserOption)}
+        </a>
+      )
+
     if (tagName === "ul") {
       const isChildList = parentNode instanceof Element && parentNode?.tagName === "li"
       const listClass = isChildList ? "ml-[20px] list-circle" : "mt-[10px] list-disc"
