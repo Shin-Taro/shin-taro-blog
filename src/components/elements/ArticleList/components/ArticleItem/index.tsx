@@ -9,12 +9,12 @@ export const ArticleItem: FC<Article> = (props) => {
   return (
     <article>
       <h2 className="text-second sp:text-third">
-        <Link className="underline underline-offset-4 hover:text-main" href={`/articles/${id}`}>
+        <Link className="hover:underline hover:underline-offset-8" href={`/articles/${id}`}>
           {title}
         </Link>
       </h2>
       <div className="mt-[15px] flex">
-        <p className="text-fifth">{createDate}</p>
+        <p className="text-fifth text-subFont">{createDate}</p>
         <div className="ml-[15px]">
           <TagIcon />
         </div>
@@ -28,7 +28,7 @@ export const ArticleItem: FC<Article> = (props) => {
           ))}
         </ul>
       </div>
-      <p className="mt-[12px] line-clamp-2 text-fourth sp:line-clamp-3">{excerpt}</p>
+      <p className="mt-[12px] line-clamp-2 text-fourth text-subFont sp:line-clamp-3">{excerpt}</p>
     </article>
   )
 }

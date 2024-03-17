@@ -39,7 +39,7 @@ export const ParserOption: HTMLReactParserOptions = {
 
     if (tagName === "a")
       return (
-        <a className="underline hover:text-subFont" {...props}>
+        <a className="text-link hover:underline hover:underline-offset-4" {...props}>
           {domToReact(children, ParserOption)}
         </a>
       )
