@@ -14,6 +14,7 @@ module.exports = {
       font: "#FFFFFF",
       sub: "#3C3C3C",
       subFont: "#CBCBCB",
+      link: "#74D3FD",
     },
     // フォントサイズ定義( https://www.figma.com/file/8JNl8iF4w9cDaanBaXauAD/Blog?node-id=21-48&t=hP9Kfvck2BC3y6gR-0 )
     fontSize: {

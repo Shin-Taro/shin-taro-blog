@@ -15,9 +15,11 @@ import { MetaDataBase } from "@/const/MetadataBase"
 const inter = Noto_Sans_JP({ subsets: ["latin"] })
 
 const description = "shin-taroの技術ブログです。Webフロントエンド関連が多めです。"
+const title = "shin-taro / blog"
 
 export const metadata: Metadata = {
   ...MetaDataBase,
+  title,
   description,
   openGraph: {
     ...MetaDataBase.openGraph,
