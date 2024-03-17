@@ -13,9 +13,9 @@ export const ArticleItem: FC<Article> = (props) => {
           {title}
         </Link>
       </h2>
-      <div className="mt-[15px] flex">
+      <div className="mt-[30px] flex sp:mt-[20px]">
         <p className="text-fifth text-subFont">{createDate}</p>
-        <div className="ml-[15px]">
+        <div className="ml-[25px]">
           <TagIcon />
         </div>
         <ul className="ml-[10px] flex flex-wrap gap-3">
@@ -28,7 +28,7 @@ export const ArticleItem: FC<Article> = (props) => {
           ))}
         </ul>
       </div>
-      <p className="mt-[12px] line-clamp-2 text-fourth text-subFont sp:line-clamp-3">{excerpt}</p>
+      <p className="mt-[12px] line-clamp-2 text-fourth text-subFont sp:line-clamp-3 sp:text-fifth">{excerpt}</p>
     </article>
   )
 }
