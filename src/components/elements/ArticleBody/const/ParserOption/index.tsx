@@ -32,14 +32,14 @@ export const ParserOption: HTMLReactParserOptions = {
       )
     if (tagName === "p")
       return (
-        <p className="mt-[20px] text-fourth leading-loose tracking-wide sp:leading-relaxed" {...props}>
+        <p className="mt-[20px] text-fourth leading-loose tracking-wide" {...props}>
           {domToReact(children, ParserOption)}
         </p>
       )
 
     if (tagName === "a")
       return (
-        <a className="underline hover:text-subFont" {...props}>
+        <a className="text-link hover:underline hover:underline-offset-4" {...props}>
           {domToReact(children, ParserOption)}
         </a>
       )

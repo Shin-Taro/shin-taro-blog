@@ -13,9 +13,9 @@ export const ArticleTemplate: FC<Article> = (props) => (
       <div className="ml-[30px]">
         <TagIcon />
       </div>
-      <ul className="ml-[10px] flex">
-        {props.tags.map((tag, index) => (
-          <li key={tag} className={index ? "ml-[10px]" : ""}>
+      <ul className="ml-[10px] flex flex-wrap gap-3">
+        {props.tags.map((tag) => (
+          <li key={tag}>
             <Link href={`/search/${tag}`}>
               <Tag>{tag}</Tag>
             </Link>
